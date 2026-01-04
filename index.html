@@ -23,8 +23,7 @@
             position: relative;
             overflow: hidden;
             background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
-            border: 4px solid #1e293b;
-        }
+            border: 4px solid #1e293b;            box-shadow: 0 0 40px rgba(59, 130, 246, 0.2), 0 0 80px rgba(59, 130, 246, 0.1);        }
         @media (max-width: 768px) {
             .poster-container {
                 aspect-ratio: auto;
@@ -63,18 +62,15 @@
             0%, 100% { opacity: 0.7; }
             50% { opacity: 1; }
         }
-        @keyframes fall {
-            0% { transform: translateY(-100px); opacity: 1; }
-            100% { transform: translateY(500px); opacity: 0; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .star {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            animation: fall 4s linear infinite;
-            z-index: 5;
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .no-underline {
+            text-decoration: none;
         }
     </style>
 </head>
@@ -100,7 +96,7 @@
         <div class="absolute bottom-0 right-0 w-48 h-48 bg-purple-600/10 blur-[100px]"></div>
 
         <!-- Header Section -->
-        <div class="relative z-10 text-center space-y-2 mt-2 md:mt-4">
+        <div class="relative z-10 text-center space-y-2 mt-2 md:mt-4 fade-in">
             <h1 class="gaming-font text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
                 SHOP ACC LQ <span class="text-blue-500 glow-blue">Bá Minh</span>
             </h1>
@@ -111,7 +107,7 @@
         </div>
 
         <!-- Main Content (Checklist) -->
-        <div class="relative z-10 w-full space-y-4 my-4 md:my-6">
+        <div class="relative z-10 w-full space-y-4 my-4 md:my-6 fade-in" style="animation-delay: 0.5s;">
             <div class="card-glass p-4 rounded-r-lg transition-transform hover:scale-[1.02]">
                 <div class="flex items-start gap-3">
                     <span class="check-icon text-xl mt-1">✅</span>
@@ -159,15 +155,15 @@
         </div>
 
         <!-- Footer Section -->
-        <div class="relative z-10 w-full text-center pb-2 md:pb-4">
+        <div class="relative z-10 w-full text-center pb-2 md:pb-4 fade-in" style="animation-delay: 1s;">
             <div class="flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs md:text-sm text-gray-400 font-medium mb-4 italic">
                 <span>✦ Cam kết uy tín</span>
                 <span>✦ Hỗ trợ nhanh 24/7</span>
                 <span>✦ Phù hợp mọi game thủ</span>
             </div>
             
-            <div class="bg-blue-600 py-3 px-6 rounded-lg inline-block shadow-[0_0_20px_rgba(37,99,235,0.4)]">
-                <a href="https://www.facebook.com/ba.minh.318754/" class="gaming-font text-white text-lg font-bold">LIÊN HỆ NGAY ĐỂ ĐƯỢC TƯ VẤN</a>
+            <div class="bg-blue-600 py-3 px-6 rounded-lg inline-block shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-transform hover:scale-105 cursor-pointer">
+                <a href="https://www.facebook.com/ba.minh.318754/" class="gaming-font text-white text-base md:text-lg font-bold no-underline block">LIÊN HỆ NGAY ĐỂ ĐƯỢC TƯ VẤN</a>
             </div>
         </div>
     </div>
