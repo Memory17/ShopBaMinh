@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Acc Game Bá Min</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0f172a;
+        }
+        .gaming-font {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .poster-container {
+            width: 100%;
+            max-width: 600px; /* Tỷ lệ 1:1 hoặc 4:5 phù hợp Facebook */
+            aspect-ratio: 4 / 5;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+            border: 4px solid #1e293b;
+        }
+        .bg-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            filter: grayscale(100%) contrast(120%);
+        }
+        .glow-blue {
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(59, 130, 246, 0.4);
+            animation: twinkle 1.5s infinite;
+        }
+        .glow-gold {
+            text-shadow: 0 0 8px rgba(234, 179, 8, 0.6);
+            animation: twinkle 2s infinite;
+        }
+        .card-glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-left: 4px solid #3b82f6;
+        }
+        .check-icon {
+            color: #22c55e;
+            filter: drop-shadow(0 0 5px rgba(34, 197, 94, 0.5));
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100px); opacity: 1; }
+            100% { transform: translateY(500px); opacity: 0; }
+        }
+        .star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            animation: fall 4s linear infinite;
+            z-index: 5;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <div id="poster" class="poster-container shadow-2xl flex flex-col items-center justify-between p-8">
+        <!-- Background Overlay -->
+        <div class="bg-overlay"></div>
+
+        <!-- Falling Stars -->
+        <div class="star" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="star" style="left: 20%; animation-delay: 1s;"></div>
+        <div class="star" style="left: 30%; animation-delay: 2s;"></div>
+        <div class="star" style="left: 40%; animation-delay: 0.5s;"></div>
+        <div class="star" style="left: 50%; animation-delay: 1.5s;"></div>
+        <div class="star" style="left: 60%; animation-delay: 2.5s;"></div>
+        <div class="star" style="left: 70%; animation-delay: 0.8s;"></div>
+        <div class="star" style="left: 80%; animation-delay: 1.8s;"></div>
+        <div class="star" style="left: 90%; animation-delay: 2.2s;"></div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 left-0 w-32 h-32 bg-blue-600/20 blur-[100px]"></div>
+        <div class="absolute bottom-0 right-0 w-48 h-48 bg-purple-600/10 blur-[100px]"></div>
+
+        <!-- Header Section -->
+        <div class="relative z-10 text-center space-y-2 mt-4">
+            <h1 class="gaming-font text-4xl md:text-5xl font-bold text-white leading-tight">
+                SHOP ACC LQ <span class="text-blue-500 glow-blue">Bá Minh</span>
+            </h1>
+            <div class="h-1 w-24 bg-yellow-500 mx-auto rounded-full shadow-[0_0_10px_rgba(234,179,8,0.5)]"></div>
+            <h2 class="gaming-font text-xl md:text-2xl text-yellow-500 glow-gold tracking-widest mt-2">
+                BẢO HÀNH RÕ RÀNG
+            </h2>
+        </div>
+
+        <!-- Main Content (Checklist) -->
+        <div class="relative z-10 w-full space-y-4 my-6">
+            <div class="card-glass p-4 rounded-r-lg transition-transform hover:scale-[1.02]">
+                <div class="flex items-start gap-3">
+                    <span class="check-icon text-xl mt-1">✅</span>
+                    <p class="text-gray-100 text-sm md:text-base font-medium">
+                        Tất cả acc bán ra <span class="text-blue-400 font-bold">100%</span> đổi được số & mật khẩu.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card-glass p-4 rounded-r-lg transition-transform hover:scale-[1.02]">
+                <div class="flex items-start gap-3">
+                    <span class="check-icon text-xl mt-1">✅</span>
+                    <p class="text-gray-100 text-sm md:text-base font-medium">
+                        Acc dính thông tin → Shop <span class="text-yellow-500 font-bold">bảo hành 1-1</span>, khách yên tâm tuyệt đối.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card-glass p-4 rounded-r-lg transition-transform hover:scale-[1.02]">
+                <div class="flex items-start gap-3">
+                    <span class="check-icon text-xl mt-1">✅</span>
+                    <p class="text-gray-100 text-sm md:text-base font-medium">
+                        Hỗ trợ <span class="text-blue-400 font-bold">góp 40% – 50%</span> cho anh em tài chính thấp.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card-glass p-4 rounded-r-lg transition-transform hover:scale-[1.02]">
+                <div class="flex items-start gap-3">
+                    <span class="check-icon text-xl mt-1">✅</span>
+                    <p class="text-gray-100 text-sm md:text-base font-medium">
+                        Thu lại acc – <span class="text-blue-400 font-bold">Giao lưu / Lên đời</span> – Bù trừ linh hoạt.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card-glass p-4 rounded-r-lg transition-transform hover:scale-[1.02]">
+                <div class="flex items-start gap-3">
+                    <span class="check-icon text-xl mt-1">✅</span>
+                    <p class="text-gray-100 text-sm md:text-base font-medium">
+                        <span class="text-yellow-500 font-bold">Thu mua acc giá tốt</span> cho anh em chán game / nghỉ game.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="relative z-10 w-full text-center pb-4">
+            <div class="flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs md:text-sm text-gray-400 font-medium mb-4 italic">
+                <span>✦ Cam kết uy tín</span>
+                <span>✦ Hỗ trợ nhanh 24/7</span>
+                <span>✦ Phù hợp mọi game thủ</span>
+            </div>
+            
+            <div class="bg-blue-600 py-3 px-6 rounded-lg inline-block shadow-[0_0_20px_rgba(37,99,235,0.4)]">
+                <span class="gaming-font text-white text-lg font-bold">LIÊN HỆ NGAY ĐỂ ĐƯỢC TƯ VẤN</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
